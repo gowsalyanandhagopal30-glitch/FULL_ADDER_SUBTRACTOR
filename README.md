@@ -22,7 +22,8 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin
 
 Carry = AB + ACin + BCin
 
-![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/0f30ba51-5ffb-4198-845f-18e054f675e7)
+<img width="374" height="230" alt="Screenshot 2025-11-27 185412" src="https://github.com/user-attachments/assets/4aae7495-b798-4614-8ebc-e338e0e5fccd" />
+
 
 **Figure -1 FULL ADDER**
 
@@ -30,7 +31,8 @@ Carry = AB + ACin + BCin
 
 A full subtractor is a combinational circuit that performs subtraction involving three bits, namely minuend, subtrahend, and borrow-in . It accepts three inputs: minuend, subtrahend and a borrow bit and it produces two outputs: difference and borrow.
 
-![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/02b24f51-ab51-4304-9ad6-7b81ffc1ead5)
+<img width="428" height="191" alt="Screenshot 2025-11-27 185546" src="https://github.com/user-attachments/assets/0c138ac4-8b56-4c40-9b4b-d4622177255d" />
+
 
 Diff = A ⊕ B ⊕ Bin 
 
@@ -40,16 +42,34 @@ Borrow out = A'Bin + A'B + BBin
 
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+2.Compile and run the program.
+3.Generate the RTL schematic and save the logic diagram.
+4.Create nodes for inputs and outputs to generate the timing diagram.
+5.For different input combinations generate the timing diagram.
+
 
 **Program:**
-
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module LabExercise4 (a,b,c,x,y,z,sum,dif,car,bor);
+input a,b,c,x,y,z;
+output sum,dif,car,bor;
+assign sum = a^b^c;
+assign car = a&b | a&c | b&c;
+assign dif = x^y^z;
+assign bor = ~x&z | ~x&y | y&z;
+endmodule
+```
 
 **RTL Schematic**
 
+<img width="1920" height="1020" alt="Screenshot 2025-11-27 184525" src="https://github.com/user-attachments/assets/5e95d36f-4d33-4c6c-809d-6779fdb8dd8b" />
+
+
 **Output Timing Waveform**
+
+<img width="1920" height="1020" alt="Screenshot 2025-11-27 185032" src="https://github.com/user-attachments/assets/3bc8ab37-e1b5-43e3-98ef-40225f699e3d" />
+
 
 **Result:**
 
